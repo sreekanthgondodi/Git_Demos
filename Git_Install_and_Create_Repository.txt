@@ -1,0 +1,22 @@
+# ***************************************  Scenario: Git Install and Create Repository **************************************************
+
+The Nautilus development team shared with the DevOps team requirements for new application development, setting up a Git repository for that project. Create a Git repository on Storage server in Stratos DC as per details given below:
+
+Install git package using yum on Storage server.
+
+After that create/init a git repository /opt/news.git (use the exact name as asked and make sure not to create a bare repository).
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+Solution:
+
+1. Login storage server with root user
+
+2. Install Git
+yum install git
+
+3. Create repository
+git init /opt/news.git
+
+4. Verify the repository
+cd /opt/
+
