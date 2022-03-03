@@ -1,0 +1,20 @@
+# ********************************************** Scenario: Git Repository Update ********************************************************************
+
+The Nautilus development team started with new project development. They have created different Git repositories to manage respective project's source code. One of the repo /opt/blog.git was created recently. The team has given us a sample index.html file that is currently present on jump host under /tmp. The repository has been cloned at /usr/src/kodekloudrepos on storage server in Stratos DC.
+
+Copy sample index.html file from jump host to storage server under cloned repository at /usr/src/kodekloudrepos, add/commit the file and push to master branch.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+Solution:
+
+1. Copy /tmp/index.html file from jump host to storage server
+scp /tmp/index.html natasha@ststor01:/usr/src/kodekloudrepos/
+
+2. Login storage server and add the index file to git repository and push to master branch
+
+git status
+git add index.html
+git commit -m "indexFile"
+git push origin master
+
+
