@@ -1,0 +1,37 @@
+# ************************************************ Scenario: Git Merge Branches ********************************************************************
+
+The Nautilus application development team has been working on a project repository /opt/ecommerce.git. This repo is cloned at /usr/src/kodekloudrepos on storage server in Stratos DC. They recently shared the following requirements with DevOps team:
+
+a. Create a new branch datacenter in /usr/src/kodekloudrepos/ecommerce repo from master and copy the /tmp/index.html file (on storage server itself). Add/commit this file in the new branch and merge back that branch to the master branch. Finally, push the changes to origin for both of the branches.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+Solution:
+
+1. At first login on to the storage server  & switch to the root user
+
+2. Check repo  git status 
+cd /usr/src/kodekloudrepos/ecommerce
+git status
+
+3. Create a new branch as per the task from the master repo
+git checkout -b datacenter
+git status
+
+4. Check  new branch status  & copy the index file 
+git branch
+cp /tmp/index.html .
+
+5. Git add , Commit Index.html file
+git add index.html
+git commit -m "added index file to datacenter branch"
+
+6. Git Checkout master & merge to new branch
+git checkout master
+git merge datacenter
+
+7. Git push to the branch as well master 
+git push -u origin datacenter
+git push -u origin master
+git status
+
+
